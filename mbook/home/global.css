@@ -1,0 +1,121 @@
+/* 全局 */
+html,body{
+	margin:0px; padding:0px;
+	-webkit-font-smoothing: antialiased;
+	font-family: 'Roboto', 'Segoe UI',Arial,'Microsoft Yahei',sans-serif;
+	background:#fff;
+}
+body::-webkit-scrollbar{ width:10px; height:10px; background:transparent; }
+body::-webkit-scrollbar-thumb{ background:#a2a2a2;border-radius:10px; }
+
+/* 亮度设置 */
+.mbook-home-bright{
+	position:fixed;left:0px;top:0px;width:100%;height:100%;z-index:1235672311;
+	background:rgba(0, 0, 0, 0);pointer-events:none;
+}
+
+
+/* 等待加载中 */
+.loading{
+	position:fixed;left:0px;top:0px;width:100%;height:100%;
+	z-index:123567231;background:rgba(255, 255, 255, .5);display:none;
+}
+.loading span{position:absolute;left:50%;top:40%;width:150px;height:15px;margin:0px 0 0 -75px;}
+.loading i{
+	position: absolute;width: 15px;height: 100%;border-radius: 50%;
+	background: #dcaeae;
+    -webkit-animation: load 1.04s ease-in infinite alternate;
+}
+@-webkit-keyframes load{
+	0%{opacity: 1;-webkit-transform: translateX(0px);}
+	100%{opacity: 0.2;-webkit-transform: translateX(150px);}
+}
+.loading i:nth-child(1){-webkit-animation-delay:0.13s;}
+.loading i:nth-child(2){-webkit-animation-delay:0.26s;}
+.loading i:nth-child(3){-webkit-animation-delay:0.39s;}
+.loading i:nth-child(4){-webkit-animation-delay:0.52s;}
+.loading i:nth-child(5){-webkit-animation-delay:0.65s;}
+
+
+/* 主页搜索框 */
+.mbook-home-search{
+	position:relative;width:500px;height:60px;margin:0 auto;margin-top:300px;
+	border: 1px solid #ddd;border-radius:5px;display:none;
+}
+.mbook-home-search input{
+	position:absolute;left:20px;top:0px;width:360px;height:60px;line-height:60px;
+	border:none;border-radius:5px;outline:none;background:transparent;color:#333;
+	font: 16px 'Microsoft Yahei';
+}
+.mbook-home-search button{
+	position:absolute;right:0px;top:0px;width:100px;height:60px;
+	border:none;border-left:1px solid #ddd;background:transparent;outline:none;cursor:pointer;
+	font: 16px 'Microsoft Yahei';
+}
+
+
+/* 主页目录列表 */
+@-webkit-keyframes mbook-home-catalog{
+	0%{ -webkit-transform: translate3d(-300px, 0px, 0px);}
+	100%{ -webkit-transform: translate3d(0px, 0px, 0px);}
+}
+.mbook-home-catalog{
+	position:fixed;left:0px;top:0px;width:300px;height:100%;z-index:123567;
+	background:#fafafa;
+	/*-webkit-animation: mbook-home-catalog 1s both;*/
+}
+.mbook-home-catalog h3{
+	font-weight:normal;border-bottom:1px solid rgba(0,0,0,.07);
+	margin:0px;height:50px;line-height:50px;text-indent:20px;font-size:16px;
+	text-overflow: ellipsis;overflow: hidden;white-space: nowrap;
+}
+.mbook-home-catalog ul{
+	margin:0px;padding:0px;position:absolute;left:20px;top:50px;right:0px;bottom:0px;
+	overflow-y:scroll;-webkit-overflow-scrolling:touch;
+}
+.mbook-home-catalog ul::-webkit-scrollbar{ width:10px; background:#f1f1f1;}
+.mbook-home-catalog ul::-webkit-scrollbar-thumb{ background:#dcaeae;border-radius:10px; }
+.mbook-home-catalog li{ 
+	margin: 0px 0px 0px 0px;height:40px;line-height:40px;
+	font-size: 14px;color:#364149;
+	text-overflow: ellipsis;overflow: hidden;white-space: nowrap;
+}
+.mbook-home-catalog li:hover{color:#000;cursor:pointer;}
+.mbook-home-catalog li.current{color:red;}
+
+
+/* 正文详情 */
+.mbook-home-content{position:absolute;left:300px;top:50px;right:0px;bottom:0px;overflow-y:scroll;-webkit-overflow-scrolling:touch;}
+.mbook-home-content::-webkit-scrollbar{ width:10px; height:10px; background:transparent; }
+.mbook-home-content::-webkit-scrollbar-thumb{ background:#a2a2a2;border-radius:10px; }
+.mbook-home-content h3{font-size:16px;color:#333;margin:0px;height:50px;line-height:50px;margin-top:20px;text-align:center;}
+.mbook-home-content article{font-size:16px;line-height:50px;text-indent:40px;max-width:800px;margin: 50px auto;margin-top:0px;padding:5px 20px;}
+.mbook-home-content article p{margin:0px;}
+.mbook-home-content article p::selection{ color:#fff;background:#333; }
+
+/* 按钮选项 */
+.mbook-home-option{
+	position:fixed;left:300px;top:0px;right:0px;height:50px;
+	border-bottom:1px solid rgba(0,0,0,.07);z-index:10;background:#fff;
+}
+.mbook-home-option-source{
+	position:absolute;left:20px;top:0px;height:50px;line-height:50px;
+	display:none;
+}
+.mbook-home-option-source select{
+	border:none;outline:none;font-size:14px;
+	font-family: 'Roboto', 'Segoe UI',Arial,'Microsoft Yahei',sans-serif;
+}
+.mbook-home-option-source b{color: #333;font-size:16px;font-weight:normal;}
+.mbook-home-option-search{
+	position:absolute;right:20px;top:0px;width:200px;height:50px;
+}
+.mbook-home-option-search input{
+	position:absolute;left:0px;top:0px;width:150px;height:50px;font-size:14px;color:#333;
+	border:none;background:transparent;outline:none;
+}
+.mbook-home-option-search button{
+	position:absolute;right:0px;top:5px;width:40px;height:40px;
+	border:none;background:transparent;opacity:.6;
+	outline:none;cursor:pointer;
+}

@@ -1,0 +1,24 @@
+{
+	"manifest_version"		: 2,
+
+	"name" 					:		"小说神器",
+	"description"			: 		"方便阅读小说",
+	"version"				: 		"1.0.14",
+
+	"browser_action"		:		{
+		"default_title"		:		"小说神器"
+	},
+
+	"options_page"			:		"home/option.html",
+
+	"background"			:		{
+		"scripts"			:		[
+			"common/background.js"
+		]
+	},
+
+	"permissions"			:		[
+		"tabs", "contextMenus", "http://*/", "https://*/"
+	]
+
+}
